@@ -1,4 +1,4 @@
-package nick.underhill;
+package underhill.nick;
 
 import java.util.Scanner;
 
@@ -29,7 +29,7 @@ public class ConversionUtil {
                     Integer.parseInt(outputRadix))
                     + "."
                     + convertFraction(
-                            fractionalPart,
+                    fractionalPart,
                     Integer.parseInt(inputRadix),
                     Integer.parseInt(outputRadix));
         } else {
@@ -103,9 +103,10 @@ public class ConversionUtil {
 
     /**
      * Validates input using given regular expression.
+     *
      * @param scanner - Scanner object;
-     * @param regex - regular expression which must be satisfied in order to pass input value;
-     * @param msg - text message shown before the input;
+     * @param regex   - regular expression which must be satisfied in order to pass input value;
+     * @param msg     - text message shown before the input;
      * @return String
      */
     static String validateInputRegEx(Scanner scanner, String regex, String msg) {
@@ -119,16 +120,30 @@ public class ConversionUtil {
 
     /**
      * Returns true if the given number is in the given radix scope, false if not.
+     *
      * @param number - number to check;
-     * @param radix - extimated radix;
+     * @param radix  - estimated radix;
      * @return boolean
      */
     public static boolean isConvertible(String number, String radix) {
-        try {
-            Integer.parseInt(number, Integer.parseInt(radix));
-            return true;
-        } catch (NumberFormatException e) {
-            return false;
+        if (number.contains(".")) {
+            String[] parts = number.split("\\.");
+            String integerPart = parts[0];
+            String fractionalPart = parts[1];
+            try {
+                Integer.parseInt(integerPart, Integer.parseInt(radix));
+                Integer.parseInt(fractionalPart, Integer.parseInt(radix));
+                return true;
+            } catch (NumberFormatException e) {
+                return false;
+            }
+        } else {
+            try {
+                Integer.parseInt(number, Integer.parseInt(radix));
+                return true;
+            } catch (NumberFormatException e) {
+                return false;
+            }
         }
     }
 }
