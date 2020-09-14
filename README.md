@@ -3,6 +3,7 @@
 RadixConverter is a console utility that allows you to perform number conversion from one numeral system to another.
 
 The utility allows you to convert an integer or a fractional number from/to any radices between 1 and 36.
+
 ![](resources/base-converter.gif)
 
 ## Prerequisites
@@ -11,19 +12,6 @@ Before you begin, ensure you have met the following requirements:
 * You have installed `JDK 7` or later.
 * You have a `Windows/Linux/Mac` machine.
 
-## Installing <project_name>
-
-To install <project_name>, follow these steps:
-
-Linux and macOS:
-```
-<install_command>
-```
-
-Windows:
-```
-<install_command>
-```
 ## Using RadixConverter
 
 To use RadixConverter, follow these steps:
@@ -32,12 +20,25 @@ Simply run it from your favorite IDE.
 
 or
 
-Compile and run RadixConverter using command line:
-* Inside the project directory run the following command in order to compile java files:
+Compile and run RadixConverter using command line.
+
+Inside the project directory run the following commands in order to compile and run RadixConverter.
+
+####Linux/Mac
+compile:
 ```
 javac -cp src/underhill/nick/*.java
 ```
-* Next command starts the program:
+run:
+```
+java -cp src underhill.nick.App
+```
+####Windows
+compile:
+```
+javac -cp src\underhill\nick\*.java
+```
+run:
 ```
 java -cp src underhill.nick.App
 ```
