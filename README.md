@@ -24,7 +24,7 @@ Compile and run RadixConverter using command line.
 
 Inside the project directory run the following commands in order to compile and run RadixConverter.
 
-####Linux/Mac
+#### Linux/Mac
 compile:
 ```
 javac -cp src/underhill/nick/*.java
@@ -33,7 +33,7 @@ run:
 ```
 java -cp src underhill.nick.App
 ```
-####Windows
+#### Windows
 compile:
 ```
 javac -cp src\underhill\nick\*.java
